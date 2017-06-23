@@ -1,0 +1,68 @@
+GIT
+---
+git init # initializes a directory for git use
+
+git clone <remote repository># copy repository
+	# eg... git clone https://github.com/aole/bgem.git
+
+git fetch # update local repository with remote changes
+			# does not affect local branch states
+git fetch origin <foo> # pull all diff commits from remote foo branch locally
+git fetch origin <src>:<dest> # pull all diff commits from remote src branch to dest (created if not exists) locally
+git fetch origin :<foo> # create new branch foo locally
+
+git status # tells status of the repository (eg. which files changed)
+
+git add <filename> # stage files and to update what will be committed
+	git add '*.txt'
+
+git reset <rel path/filename> #unstage file
+
+git commit [-m <"msg">]
+
+git log # shows log of all commits
+
+git branch <branch name> # create a branch
+git branch -f <branch> <pos> # to move branch positions around
+	# eg ... git branch -f bugWork HEAD~^2^
+git branch -u <remote> [<name>] # set branch name tracking remote
+							# if name not provided, checkedout branch is implied
+git branch -d <branch> # delete a branch
+
+git merge <branch name> # merge branch to HEAD
+						# creates new commit combining the 2 parents
+
+git rebase -i <pos> # = commit previous commits to master
+	# eg git rebase -i HEAD~2
+git rebase <to commit> # rebase head to commit
+git rebase <to commit> <commit> # rebase commit to commit and set head
+
+git checkout <branch name> # switch to branch
+	# ~<num> goes back num times
+	# ^<num> chooses num parent (parellel)
+	# above modifiers can be chained eg .... git checkout HEAD~^2~2
+git checkout -b <name> <remote branch> # create a new branch with name and sets it to track remote branch
+git checkout -- <file>... # to discard changes in working directory
+
+git push # push local changes to remote; update master and move origin (remote tracking) branch
+git push <origin> <place> # commit all (missing in remote) changes from place (branch) to origin (remote)
+git push origin <src location>:<destination> # eg.... git push origin foo^:master
+							# if destination does not exist, remote will create new destination branch
+git push -u <origin> <place> # -u to remember the params and just use git push next time
+git push origin :<foo> # removes remote foo branch by pushing "nothing"
+
+git pull origin <master> # pull files from remote master branch and merges with the head
+						 # = git fetch + get merge origin
+git pull --rebase 		 # = get fetch + get rebase origin
+git pull origin foo # = git fetch origin foo; git merge origin/foo
+
+git remote add <name> <url>
+
+git diff HEAD # difference from HEAD
+
+git rm <files> # remove and stage removal
+git reset HEAD <file>... # to unstage
+
+git tag <tag/version name> <commit> # creates a tag / permanent pos
+
+git describe <branch> # shows how far you are from a closest ancestral tag
