@@ -18,7 +18,7 @@ git add <filename> # stage files and to update what will be committed
 
 git reset <rel path/filename> #unstage file
 
-git commit [-a][-m <"msg">] #-a: automatically stage every file that is already tracked
+git commit [-m <"msg">]
 
 git log # shows log of all commits
 
@@ -46,6 +46,7 @@ git checkout -- <file>... # to discard changes in working directory
 
 git push # push local changes to remote; update master and move origin (remote tracking) branch
 git push <origin> <place> # commit all (missing in remote) changes from place (branch) to origin (remote)
+		# used when new branch not created in remote yet
 git push origin <src location>:<destination> # eg.... git push origin foo^:master
 							# if destination does not exist, remote will create new destination branch
 git push -u <origin> <place> # -u to remember the params and just use git push next time
@@ -66,3 +67,5 @@ git reset HEAD <file>... # to unstage
 git tag <tag/version name> <commit> # creates a tag / permanent pos
 
 git describe <branch> # shows how far you are from a closest ancestral tag
+
+# to ignore some files create a .gitignore file and add ignored files to it (can use patterns)
