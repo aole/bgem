@@ -22,6 +22,8 @@ git commit [-a][-m <"msg">] # -a: auto commit all tracked files
 
 git log # shows log of all commits
 
+git branch [-v]# list all branches; checkedout branch has an *
+		   #-v: shows last commit on each branch
 git branch <branch name> # create a branch
 git branch -f <branch> <pos> # to move branch positions around
 	# eg ... git branch -f bugWork HEAD~^2^
@@ -69,3 +71,7 @@ git tag <tag/version name> <commit> # creates a tag / permanent pos
 git describe <branch> # shows how far you are from a closest ancestral tag
 
 # to ignore some files create a .gitignore file and add ignored files to it (can use patterns)
+
+git diff <file> # changes made relative to the index (staging area for the next commit)
+	# In other words, the differences are what you could tell Git to further add to the index but you still haven’t.
+	# You can stage these changes by using git add
