@@ -18,7 +18,7 @@ git add <filename> # stage files and to update what will be committed
 
 git reset <rel path/filename> #unstage file
 
-git commit [-m <"msg">]
+git commit [-a][-m <"msg">] #-a: automatically stage every file that is already tracked
 
 git log # shows log of all commits
 
