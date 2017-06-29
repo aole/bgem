@@ -1,0 +1,15 @@
+Python
+-------
+
+python -m pip install <package> # downloads and installs package
+python -m pip install <downloaded whl package> # installs package
+
+easy_install <package>
+
+python -m pip install --upgrade <package>
+python -m pip install -U <package> # upgrade package
+	# eg ... python -m pip install -U pip
+
+python -m pip uninstall <package>
+
+python -m <package> --version

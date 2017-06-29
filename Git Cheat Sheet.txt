@@ -75,3 +75,4 @@ git describe <branch> # shows how far you are from a closest ancestral tag
 git diff <file> # changes made relative to the index (staging area for the next commit)
 	# In other words, the differences are what you could tell Git to further add to the index but you still haven’t.
 	# You can stage these changes by using git add
+	
